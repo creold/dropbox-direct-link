@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://creold.github.io/dropbox-direct-link/sitemap.xml
