@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Dropbox Direct Link Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Instant theme sync to prevent white flashing -->
+    <script>
+      const savedTheme = localStorage.getItem("ddlWebTheme") || 
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </head>
+  <body>
+    <div class="app-container" style="max-width: 800px;">
+      
+      <!-- Back Link to Main App -->
+      <a href="index.html" class="btn-back">
+        <i class="fa-solid fa-arrow-left"></i> Back to Generator
+      </a>
+
+      <header class="app-header">
+        <h2><i class="fa-solid fa-shield-halved"></i> Privacy Policy</h2>
+      </header>
+
+      <main class="privacy-card">
+        <h3>Personal Data</h3>
+        <p>
+          Our web application and <a
+            href="https://chromewebstore.google.com/detail/dropbox-direct-link-gener/eicoigkfdogflbbcoefagmejoopganmd">Google
+            Chrome extension</a> do&nbsp;not collect any user data, browsing history, or&nbsp;pasted URLs.
+        </p>
+        <p>
+          The <b>Dropbox Direct Link Generator</b> ecosystem functions entirely via client-side local processing:
+        </p>
+        <ul>
+          <li><b>Web App Version (GitHub Pages):</b> Runs completely inside your web browser. All link parsing, text
+            processing, and CSV generation are handled locally on&nbsp;your machine via JavaScript. No&nbsp;data
+            is&nbsp;ever sent to&nbsp;external servers.</li>
+          <li><b>Google Chrome Extension:</b> Only converts the pasted link and writes it&nbsp;to&nbsp;the clipboard
+            on&nbsp;the user&rsquo;s computer. We&nbsp;do&nbsp;not track or&nbsp;store any user information.</li>
+        </ul>
+        <p>
+          Your information is&nbsp;processed exclusively on&nbsp;your browser and your computer. We&nbsp;do&nbsp;not use
+          any services or&nbsp;tools that may collect user data, and we&nbsp;do&nbsp;not share any user information with
+          any third-party services or&nbsp;tools.
+        </p>
+        <p>
+          We&nbsp;take the privacy of&nbsp;our users seriously and strive to&nbsp;ensure that our tools are completely
+          safe and secure to&nbsp;use.
+        </p>
+
+        <h3>Third Party Services</h3>
+        <p>
+          Donations are processed securely by&nbsp;<b>Buy Me&nbsp;a&nbsp;Coffee</b> (Publisherr Inc, 2261 Market Street
+          #4610, 94114, San Francisco, United States) and the payment processor chosen by&nbsp;that organization
+          (<b>Stripe</b>). They do&nbsp;not store credit card data on&nbsp;our servers. Payment processing is&nbsp;fully
+          handled by&nbsp;Stripe under PCI Compliance Level 1&nbsp;standards.
+        </p>
+
+        <h3>Ad&nbsp;Servers</h3>
+        <p>
+          We&nbsp;do&nbsp;not have partnerships or&nbsp;special relationships with any ad&nbsp;server companies, and
+          we&nbsp;do&nbsp;not host any advertisements.
+        </p>
+
+        <h3>Conclusion</h3>
+        <p>
+          If&nbsp;you have any questions or&nbsp;concerns about our privacy policy, please contact&nbsp;us directly via
+          email at
+          <a href="mailto:hi@sergosokin.ru">hi@sergosokin.ru</a>.
+        </p>
+
+        <p style="margin-top: 40px; font-size: 12px; color: var(--text-muted);">
+          <i>Updated: July, 2026</i>
+        </p>
+      </main>
+
+    </div>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110736863', 'ym');
+
+        ym(110736863, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/110736863" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
+</html>

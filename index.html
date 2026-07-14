@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox Direct Link Generator</title>
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="app-container">
+      
+      <header class="app-header">
+        <h2>
+          <img src="images/logo.svg" alt="DDLG logo" class="header-logo-img">
+          <span class="hide">Dropbox Direct Link Generator</span>
+        </h2>
+        <div class="header-controls">
+          
+          <div class="lang-switcher">
+            <a href="index.html" class="lang-btn active">EN</a>
+            <span class="lang-divider">/</span>
+            <a href="index-ru.html" class="lang-btn">RU</a>
+          </div>
+
+          <label class="toggle">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider"></span>
+            <span class="label">Dark Theme</span>
+          </label>
+        </div>
+      </header>
+
+      <section class="workspace-section input-section">
+        <div class="input-grid">
+          
+          <div class="output-column">
+            <div class="column-header">
+              <span class="label-text"><i class="fa-solid fa-link"></i> Original Dropbox Shared Links</span>
+              <div class="header-buttons">
+                <span id="link-counter" class="counter-badge" style="display: none;">0 links</span>
+                <button class="btn-action btn-clear" id="btn-clear-main" title="Clear all text" disabled><i class="fas fa-xmark"></i> Clear Input</button>
+              </div>
+            </div>
+            <div class="textarea-wrapper main-input">
+              <textarea id="url-input" rows="6" placeholder="Paste your Dropbox shared links here...&#10;Example: https://www.dropbox.com/s/xyz/file.jpg?dl=0" autofocus></textarea>
+            </div>
+          </div>
+
+          <div class="output-column">
+            <div class="column-header">
+              <span class="label-text"><i class="fas fa-file-import"></i> Extract from File</span>
+            </div>
+            <div class="drop-zone" id="drop-zone">
+              <i class="fas fa-file-import drop-icon"></i>
+              <span class="drop-text">Drag & drop <b>TXT</b> or <b>CSV</b> file here<br>or click to upload links</span>
+              <input type="file" id="file-input" accept=".txt,.csv,text/plain,text/csv,application/vnd.ms-excel,application/csv,text/comma-separated-values" style="display:none">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="workspace-section output-section">
+        <div class="outputs-grid">
+          
+          <div class="output-column">
+            <div class="column-header">
+              <span class="label-text"><i class="fa-solid fa-circle-arrow-down"></i> Links for Automatic Download</span>
+                <div class="header-buttons">
+                  <button class="btn-action btn-copy-all" data-target="url-download" title="Copy all download links" disabled><i class="fas fa-clone"></i> Copy All</button>
+                  <button class="btn-action btn-open-first" data-target="url-download" title="Open the first link in a new tab" disabled><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</button>
+                </div>
+            </div>
+            <div class="textarea-wrapper">
+              <textarea id="url-download" rows="10" placeholder="Direct download links will appear here..." readonly></textarea>
+            </div>
+          </div>
+
+          <div class="output-column">
+            <div class="column-header">
+              <span class="label-text"><i class="fa-solid fa-eye"></i> Links for Direct View</span>
+                <div class="header-buttons">
+                  <button class="btn-action btn-copy-all" data-target="url-view" title="Copy all view links" disabled><i class="fas fa-clone"></i> Copy All</button>
+                  <button class="btn-action btn-open-first" data-target="url-view" title="Open the first link in a new tab" disabled><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</button>
+                </div>
+            </div>
+            <div class="textarea-wrapper">
+              <textarea id="url-view" rows="10" placeholder="Direct browser view links will appear here..." readonly></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="global-actions-bar">
+          <button class="btn-action btn-batch btn-global-export" id="btn-export-csv" title="Export all processed links to a single CSV file" disabled>
+            <i class="fas fa-file-csv"></i> Export All Links to CSV
+          </button>
+        </div>
+      </section>
+
+      <section class="workspace-section seo-section">
+        <div class="seo-container">
+
+          <h2 class="seo-main-title">Dropbox Direct Link Generator&nbsp;&mdash; Fast and Secure</h2>
+
+          <div class="seo-grid">
+
+            <div class="seo-column">
+
+              <div class="seo-block">
+                <h3><i class="fa-solid fa-circle-info"></i> What does this generator&nbsp;do?</h3>
+                <p>
+                  Standard shared links generated by&nbsp;Dropbox point to&nbsp;a&nbsp;web preview page.
+                  To&nbsp;download files, your users or&nbsp;external scripts must visit this page and manually click
+                  the download button.
+                </p>
+                <p>
+                  Our utility instantly converts these URLs into two highly practical direct formats:
+                </p>
+                <ul>
+                  <li><strong>Direct Download:</strong> One-click download links that bypass the Dropbox interface
+                    entirely.</li>
+                  <li><strong>Direct View:</strong> Links for embedding media assets (images, audio, documents) directly
+                    on&nbsp;your site or&nbsp;app.</li>
+                </ul>
+              </div>
+
+              <div class="seo-block privacy-box">
+                <h3><i class="fa-solid fa-shield-halved"></i> Privacy First</h3>
+                <p>
+                  We&nbsp;do&nbsp;not collect, store, or&nbsp;analyze your files and links. The entire conversion
+                  process occurs <strong>exclusively inside your browser</strong> via client-side JavaScript.
+                </p>
+                <p>
+                  Your original links never reach our servers and are never shared with third parties. Usage
+                  is&nbsp;completely autonomous, confidential, and safe.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="seo-column">
+
+              <div class="seo-block">
+                <h3><i class="fa-solid fa-circle-question"></i> How to&nbsp;copy links from Dropbox?</h3>
+                <p>You can obtain the necessary shared link in&nbsp;two simple ways:</p>
+
+                <div class="guide-step">
+                  <h4><i class="fa-brands fa-chrome"></i> Via Web Browser:</h4>
+                  <ol>
+                    <li>Hover over the desired file inside your Dropbox dashboard.</li>
+                    <li>Click the <kbd>Share</kbd> button.</li>
+                    <li>In&nbsp;the popup modal, click <kbd>Copy link</kbd>.</li>
+                  </ol>
+                </div>
+
+                <div class="guide-step">
+                  <h4><i class="fa-solid fa-laptop"></i> Via Desktop Application:</h4>
+                  <ol>
+                    <li>Open your local Dropbox folder in&nbsp;File Explorer (Windows) or&nbsp;Finder (macOS).</li>
+                    <li>Right-click the file you wish to&nbsp;share.</li>
+                    <li>Select <kbd>Copy Dropbox link</kbd> from the context menu.</li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="seo-block">
+                <h3><i class="fa-solid fa-file-csv"></i> Preparing TXT or&nbsp;CSV for Import</h3>
+                <p>
+                  For processing hundreds of&nbsp;items in&nbsp;batch mode, you can upload file lists:
+                </p>
+                <ul>
+                  <li><strong>TXT File:</strong> A&nbsp;simple text file with one original Dropbox shared link pasted
+                    on&nbsp;each new line.</li>
+                  <li><strong>CSV File:</strong> Upload a&nbsp;spreadsheet. Our local script will automatically scan all
+                    cells, extract the Dropbox links, remove any duplicates, and prepare a&nbsp;structured table.</li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <div class="privacy-note">
+          <i class="fa-solid fa-shield-halved"></i> 100% Private: All links are processed locally in your browser. No data is sent to any server 
+          | <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="donate">
+          <a href="https://www.buymeacoffee.com/aiscripts" target="_blank" class="donate-link">Donate <i class="icon-donate fas fa-heart"></i></a>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110736863', 'ym');
+
+        ym(110736863, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/110736863" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
+</html>
