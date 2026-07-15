@@ -1,3 +1,5 @@
+![Cover](images/cover.jpg)
+
 # Dropbox Direct Link Generator
 
 A lightweight, fast, and privacy-first web tool designed to instantly convert standard Dropbox shared links (which lead to a web preview page) into direct download or direct browser-viewable formats.
