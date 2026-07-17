@@ -21,10 +21,7 @@
     <div class="app-container">
       
       <header class="app-header">
-        <h2>
-          <img src="images/logo.svg" alt="DDLG logo" class="header-logo-img">
-          <span class="hide">Dropbox Direct Link Generator</span>
-        </h2>
+        <img src="images/logo.svg" alt="DDLG logo" class="header-logo-img">
         <div class="header-controls">
           
           <div class="lang-switcher">
@@ -40,6 +37,13 @@
           </label>
         </div>
       </header>
+
+      <div class="intro">
+        <h1 class="text-4xl font-bold tracking-tight">Dropbox Direct Link Generator</h1>
+        <p class="text-muted-foreground mx-auto max-w-2xl text-xl">
+          Мгновенно преобразуйте общие ссылки Dropbox в&nbsp;прямые ссылки для скачивания и&nbsp;просмотра. Идеально подходит для разработки, автоматизации и&nbsp;публикации в&nbsp;сети.
+        </p>
+      </div>
 
       <section class="workspace-section input-section">
         <div class="input-grid">
@@ -79,7 +83,7 @@
               <span class="label-text"><i class="fa-solid fa-circle-arrow-down"></i> Ссылки для автоскачивания</span>
                 <div class="header-buttons">
                   <button class="btn-action btn-copy-all" data-target="url-download" title="Скопировать все ссылки" disabled><i class="fas fa-clone"></i> Копировать все</button>
-                  <button class="btn-action btn-open-first" data-target="url-download" title="Открыть первую ссылку в новой вкладке" disabled><i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть первую</button>
+                  <button class="btn-action btn-open-first" data-target="url-download" title="Открыть первую ссылку в новой вкладке" disabled><i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть</button>
                 </div>
             </div>
             <div class="textarea-wrapper">
@@ -92,7 +96,7 @@
               <span class="label-text"><i class="fa-solid fa-eye"></i> Ссылки для просмотра в браузере</span>
                 <div class="header-buttons">
                   <button class="btn-action btn-copy-all" data-target="url-view" title="Скопировать все ссылки" disabled><i class="fas fa-clone"></i> Копировать все</button>
-                  <button class="btn-action btn-open-first" data-target="url-view" title="Открыть первую ссылку в новой вкладке" disabled><i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть первую</button>
+                  <button class="btn-action btn-open-first" data-target="url-view" title="Открыть первую ссылку в новой вкладке" disabled><i class="fa-solid fa-arrow-up-right-from-square"></i> Открыть</button>
                 </div>
             </div>
             <div class="textarea-wrapper">
@@ -109,97 +113,150 @@
         </div>
       </section>
 
-      <section class="workspace-section seo-section">
-        <div class="seo-container">
+      <section class="workspace-section faq-section">
+        <div class="faq-container">
 
-          <h2 class="seo-main-title">Dropbox Direct Link Generator&nbsp;&mdash; Быстро и&nbsp;безопасно</h2>
-
-          <div class="seo-grid">
-
-            <div class="seo-column">
-
-              <div class="seo-block">
-                <h3><i class="fa-solid fa-circle-info"></i> Что делает этот генератор?</h3>
-                <p>
-                  Стандартная ссылка совместного доступа, которую создает Dropbox, ведет на&nbsp;веб-страницу
-                  предварительного просмотра. Чтобы скачать файл, вашим пользователям или скриптам приходится открывать
-                  эту страницу и&nbsp;нажимать кнопку загрузки вручную.
-                </p>
-                <p>
-                  Наш инструмент мгновенно преобразует такие ссылки в&nbsp;два удобных формата:
-                </p>
-                <ul>
-                  <li><strong>Direct Download:</strong> Ссылки для прямого скачивания файла в&nbsp;один клик
-                    в&nbsp;обход интерфейса Dropbox.</li>
-                  <li><strong>Direct View:</strong> Ссылки для встраивания медиафайлов (картинок, аудио, документов)
-                    прямо на&nbsp;ваш сайт или в&nbsp;приложение.</li>
-                </ul>
-              </div>
-
-              <div class="seo-block privacy-box">
-                <h3><i class="fa-solid fa-shield-halved"></i> Конфиденциальность на&nbsp;первом месте</h3>
-                <p>
-                  Мы&nbsp;не&nbsp;собираем, не&nbsp;храним и&nbsp;не&nbsp;анализируем ваши данные. Весь процесс
-                  конвертации происходит <strong>исключительно внутри вашего браузера</strong> с&nbsp;помощью локального
-                  JavaScript.
-                </p>
-                <p>
-                  Ваши исходные ссылки и&nbsp;файлы никогда не&nbsp;отправляются на&nbsp;наши серверы
-                  и&nbsp;не&nbsp;передаются третьим лицам. Работа с&nbsp;сервисом полностью автономна, конфиденциальна
-                  и&nbsp;безопасна.
-                </p>
-              </div>
-
-            </div>
-
-            <div class="seo-column">
-
-              <div class="seo-block">
-                <h3><i class="fa-solid fa-circle-question"></i> Как скопировать ссылку в&nbsp;Dropbox?</h3>
-                <p>Получить ссылку на&nbsp;нужный файл можно двумя простыми способами:</p>
-
-                <div class="guide-step">
-                  <h4><i class="fa-brands fa-chrome"></i> Через браузер (веб-версия):</h4>
-                  <ol>
-                    <li>Наведите курсор на&nbsp;нужный файл в&nbsp;личном кабинете Dropbox.</li>
-                    <li>Нажмите на&nbsp;появившуюся кнопку <kbd>Поделиться</kbd> (Share).</li>
-                    <li>В&nbsp;открывшемся окне нажмите кнопку <kbd>Копировать ссылку</kbd> (Copy link).</li>
-                  </ol>
-                </div>
-
-                <div class="guide-step">
-                  <h4><i class="fa-solid fa-laptop"></i> Через десктоп-приложение (на&nbsp;компьютере):</h4>
-                  <ol>
-                    <li>Откройте папку Dropbox через Проводник (Windows) или Finder (macOS).</li>
-                    <li>Нажмите правой кнопкой мыши по&nbsp;файлу, который хотите скачать.</li>
-                    <li>В&nbsp;контекстном меню выберите <kbd>Скопировать ссылку Dropbox</kbd> (Copy Dropbox link).</li>
-                  </ol>
+        <div class="info-card">
+          <h3 class="info-card-title"><i class="fa-solid fa-circle-question"></i> Как пользоваться сервисом</h3>
+            <div class="steps-grid">
+              <div class="step-card">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <h4>Скопируйте ссылку</h4>
+                  <p>Нажмите правой кнопкой мыши на&nbsp;файл в&nbsp;папке Dropbox на&nbsp;компьютере и&nbsp;выберите
+                    <strong>Скопировать ссылку Dropbox</strong> (или нажмите <strong>Поделиться &rarr; Копировать ссылку</strong>
+                    на&nbsp;сайте).</p>
                 </div>
               </div>
-
-              <div class="seo-block">
-                <h3><i class="fa-solid fa-file-csv"></i> Подготовка TXT и&nbsp;CSV для импорта</h3>
-                <p>
-                  Для массовой обработки сотен файлов за&nbsp;один раз вы&nbsp;можете использовать импорт файлов:
-                </p>
-                <ul>
-                  <li><strong>Файл TXT:</strong> Создайте обычный текстовый документ и&nbsp;вставьте исходные ссылки
-                    Dropbox. Каждая новая ссылка должна начинаться строго с&nbsp;новой строки.</li>
-                  <li><strong>Файл CSV:</strong> Вы&nbsp;можете загрузить готовую Excel-таблицу. Наш умный алгоритм
-                    самостоятельно просканирует все ячейки файла, извлечет из&nbsp;них ссылки, очистит
-                    от&nbsp;дубликатов и&nbsp;сформирует готовый итоговый файл.</li>
-                </ul>
+              <div class="step-card">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <h4>Вставьте для конвертации</h4>
+                  <p>Вставьте одну или несколько ссылок в&nbsp;поле ввода выше. Вы&nbsp;также можете просто перетащить файл
+                    <strong>TXT</strong> или <strong>CSV</strong> для массовой обработки.</p>
+                </div>
               </div>
+              <div class="step-card">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <h4>Получите результат</h4>
+                  <p>Прямые ссылки генерируются моментально. Скопируйте нужный формат в&nbsp;буфер обмена или скачайте готовый
+                    результат в&nbsp;виде CSV-таблицы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fa-solid fa-code"></i> Сравнение форматов ссылок</h3>
+            <div class="table-container">
+              <table class="format-table">
+                <thead>
+                  <tr>
+                    <th>Тип ссылки</th>
+                    <th>Формат ссылки (URL)</th>
+                    <th>Как это работает</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="badge badge-original">Исходная ссылка</span></td>
+                    <td><code>https://www.dropbox.com/s/xyz/file.jpg?dl=0</code></td>
+                    <td>Открывает страницу предпросмотра Dropbox, где пользователю нужно нажимать кнопку скачивания вручную.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-download">Cкачивание</span></td>
+                    <td><code>https://www.dropbox.com/s/xyz/file.jpg?dl=1</code></td>
+                    <td>Запускает автоматическое скачивание файла в&nbsp;один клик полностью в&nbsp;обход интерфейса Dropbox.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-view">Просмотр</span></td>
+                    <td><code>https://dl.dropboxusercontent.com/s/xyz/file.jpg</code></td>
+                    <td>Прямой доступ к&nbsp;исходному файлу. Идеально для встраивания картинок, аудио и&nbsp;PDF на&nbsp;сайты.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="faq-grid-two-col">
+            <div class="info-card">
+              <h3 class="info-card-title"><i class="fa-solid fa-star"></i> Ключевые особенности</h3>
+              <ul class="features-list">
+                <li>
+                  <i class="fa-solid fa-bolt feature-icon"></i>
+                  <div>
+                    <strong>Локальная генерация</strong> Конвертация происходит прямо в&nbsp;вашем браузере. Никаких задержек
+                    и&nbsp;ожидания.
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-shield-halved feature-icon success-color"></i>
+                  <div>
+                    <strong>Безопасно и&nbsp;приватно</strong> Ссылки не&nbsp;отправляются на&nbsp;наши серверы. Мы&nbsp;ценим
+                    вашу конфиденциальность и&nbsp;не&nbsp;храним ваши данные.
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-file-csv feature-icon"></i>
+                  <div>
+                    <strong>Пакетный импорт и&nbsp;CSV</strong> Загружайте файлы целыми списками и&nbsp;экспортируйте готовую
+                    структуру обратно в&nbsp;таблицы.
+                  </div>
+                </li>
+              </ul>
             </div>
 
+            <div class="info-card">
+              <h3 class="info-card-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Варианты использования</h3>
+              <ul class="features-list">
+                <li>
+                  <i class="fa-solid fa-share-nodes feature-icon"></i>
+                  <div>
+                    <strong>Делитесь в&nbsp;соцсетях</strong> Дайте подписчикам возможность скачивать материалы в&nbsp;один клик без
+                    перехода на&nbsp;тяжелые страницы Dropbox.
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-gears feature-icon"></i>
+                  <div>
+                    <strong>Автоматизация и&nbsp;No-code</strong> Используйте прямые ссылки в&nbsp;Make, Zapier или скриптах для
+                    автоматического скачивания медиа-ассетов.
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-globe feature-icon"></i>
+                  <div>
+                    <strong>Веб-дизайн и&nbsp;разработка</strong> Встраивайте изображения, иконки, шрифты и&nbsp;документы прямо
+                    в&nbsp;разметку вашего сайта.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-card chrome-extension-card">
+            <div class="extension-content">
+              <div class="extension-text">
+                <h3><i class="fa-brands fa-chrome"></i> Dropbox Direct Link Extension</h3>
+                <p>
+                  Установите наше бесплатное расширение для Chrome, чтобы генерировать прямые ссылки, 
+                  не&nbsp;посещая сайт. Мгновенный доступ с&nbsp;панели инструментов вашего браузера. 
+                  Доступно для Chrome, Opera, Яндекс.Браузера
+                </p>
+              </div>
+              <a href="https://chromewebstore.google.com/detail/dropbox-direct-link-gener/eicoigkfdogflbbcoefagmejoopganmd" target="_blank" class="btn-extension">
+                <i class="fa-solid fa-download"></i> Установить
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       <footer class="app-footer">
         <div class="privacy-note">
-          <i class="fa-solid fa-shield-halved"></i> 100% Приватно: Все ссылки обрабатываются локально в браузере. Данные не передаются на сервер 
+          <i class="fa-solid fa-shield-halved"></i> 100% Приватно: Все ссылки обрабатываются локально в&nbsp;браузере. Данные не&nbsp;передаются на&nbsp;сервер 
           | <a href="privacy-ru.html">Политика конфиденциальности</a>
         </div>
         <div class="donate">

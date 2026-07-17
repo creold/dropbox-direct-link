@@ -10,7 +10,7 @@
  * - Single and bulk links modes
  * - Save last URL
  * 
- * @version 2.0 | @date 2026-07-13
+ * @version 2.1 | @date 2026-07-17
  * @author Sergey Osokin
  * ============================================
  */
@@ -28,6 +28,32 @@ const linkCounter = document.getElementById("link-counter");
 
 const copyAllButtons = document.querySelectorAll(".btn-copy-all");
 const openFirstButtons = document.querySelectorAll(".btn-open-first");
+
+// --- Localization (i18n) ---
+const currentLang = document.documentElement.lang || "en";
+
+const translations = {
+  en: {
+    copied: "Copied!",
+    folderLink: "Folder link (View not supported)",
+    fileError: "Please upload a valid .txt or .csv file",
+    noLinksError: "No valid Dropbox links found inside the file.",
+    linkFound: "link found",
+    linksFound: "links found"
+  },
+  ru: {
+    copied: "Скопировано!",
+    folderLink: "Ссылка на папку (просмотр не поддерживается)",
+    fileError: "Пожалуйста, загрузите корректный файл .txt или .csv",
+    noLinksError: "Внутри файла не найдено подходящих ссылок Dropbox.",
+    linkFound: "ссылка найдена",
+    linksFound: "ссылок найдено"
+  }
+};
+
+const locale = (key) => {
+  return translations[currentLang]?.[key] || translations["en"][key];
+};
 
 let currentUrlsArray = []; 
 let currentFileName = "links_processed";
@@ -90,7 +116,7 @@ const processBulkText = () => {
     const p = processSingleUrl(url);
     if (p.valid) {
       downloadResults.push(p.download);
-      viewResults.push(p.view ? p.view : "Folder link (View not supported)");
+      viewResults.push(p.view ? p.view : locale("folderLink"));
     }
   });
 
@@ -101,7 +127,8 @@ const processBulkText = () => {
   btnClearMain.disabled = text.trim().length === 0;
 
   if (hasLinks) {
-    linkCounter.textContent = `${uniqueUrls.length} ${uniqueUrls.length === 1 ? 'link' : 'links'} found`;
+    const suffix = uniqueUrls.length === 1 ? locale("linkFound") : locale("linksFound");
+    linkCounter.textContent = `${uniqueUrls.length} ${suffix}`;
     linkCounter.style.display = "inline-block";
   } else {
     linkCounter.style.display = "none";
@@ -124,7 +151,7 @@ const processBulkText = () => {
  */
 const handleFile = (file) => {
   if (!file.name.endsWith('.txt') && !file.name.endsWith('.csv')) {
-    alert("Please upload a valid .txt or .csv file");
+    alert(locale("fileError"));
     return;
   }
 
@@ -140,7 +167,7 @@ const handleFile = (file) => {
       urlInput.value = uniqueUrls.join("\n");
       processBulkText();
     } else {
-      alert("No valid Dropbox links found inside the file.");
+      alert(locale("noLinksError"));
     }
   };
   reader.readAsText(file);
@@ -161,7 +188,7 @@ const setupCopyButtons = () => {
 
       navigator.clipboard.writeText(textarea.value).then(() => {
         const originalHtml = btn.innerHTML;
-        btn.innerHTML = `<i class="fas fa-check"></i> Copied!`;
+        btn.innerHTML = `<i class="fas fa-check"></i> ${locale("copied")}`;
         btn.classList.add("active-tooltip");
 
         setTimeout(() => {
